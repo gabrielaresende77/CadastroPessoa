@@ -9,7 +9,7 @@ Prazo informado no enunciado: **30/11/2026**. Entrega: link deste repositório p
 
 | Integrante | Nome completo (preencher) | Responsabilidade proposta |
 |---|---|---|
-| 1 | PREENCHER NOME COMPLETO 1 | SQL, modelos, ProdutoDAO, integração e correções da base |
+| 1 | Gabriela Oliveira Resende | SQL, modelos, ProdutoDAO, integração e correções da base |
 | 2 | PREENCHER NOME COMPLETO 2 | Tela de produtos, checklist e documentação de execução |
 | 3 | PREENCHER NOME COMPLETO 3 | VendaDAO, transação e testes de banco |
 | 4 | PREENCHER NOME COMPLETO 4 | Tela de vendas, carrinho, total e testes de regras |
