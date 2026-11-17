@@ -24,6 +24,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         initComponents();
         atualizarBaseDados();
         
+        javax.swing.JMenu negocios = new javax.swing.JMenu("Produtos e vendas");
+        javax.swing.JMenuItem produtos = new javax.swing.JMenuItem("Cadastro de produtos");
+        javax.swing.JMenuItem vendas = new javax.swing.JMenuItem("Nova venda");
+        produtos.addActionListener(e -> abrir(new TelaCadProduto()));
+        vendas.addActionListener(e -> abrir(new TelaVenda()));
+        negocios.add(produtos); negocios.add(vendas); jMenuBar1.add(negocios);
         jMenu1.remove(jMenuItem2); // Remove opção de endereço sem implementação no original.
         jMenuBar1.remove(jMenu2); // Sair continua disponível em Arquivo > Sair.
         setTitle("Cadastro de pessoas, produtos e vendas");
