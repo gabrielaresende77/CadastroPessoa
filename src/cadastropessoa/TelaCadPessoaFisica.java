@@ -171,10 +171,6 @@ public class TelaCadPessoaFisica extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // Gravar
         if(camposPreenchidos()){
-            /*Pessoa pessoa = new Pessoa();
-            pessoa.setNome(txtNome.getText());
-            pessoa.setEndereco(txtEndereco.getText());
-            pessoa.setEmail(txtEmail.getText());*/
             Pessoa pessoa = new PessoaFisica(
                     txtNome.getText(),
                     txtEndereco.getText(),
@@ -186,10 +182,10 @@ public class TelaCadPessoaFisica extends javax.swing.JInternalFrame {
             // senão (!=) atualizar registro
             if(posicao == -1){
                 //adicionar esta pessoa no array listaPessoas na tela principal:
-                telaPrincipal.adicionarPessoaLista(pessoa);
+                if (!telaPrincipal.adicionarPessoaLista(pessoa)) return;
                 mensagem = "Pessoa cadastrada com sucesso!";
             }else{
-                telaPrincipal.atualizarPessoaLista(pessoa, posicao);
+                if (!telaPrincipal.atualizarPessoaLista(pessoa, posicao)) return;
                 mensagem = "Pessoa atualizada com sucesso!";
             }
             limparTela();
@@ -262,7 +258,7 @@ public class TelaCadPessoaFisica extends javax.swing.JInternalFrame {
                 "Confirmar exclusão",
                 JOptionPane.YES_NO_OPTION);
         if (resposta == JOptionPane.YES_OPTION) {
-            telaPrincipal.removerPessoaLista(posicao);
+            if (!telaPrincipal.removerPessoaLista(posicao)) return;
             limparTela();
             posicao = -1;
             JOptionPane.showMessageDialog(null, "Pessoa excluída com sucesso!");

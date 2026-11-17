@@ -24,13 +24,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         initComponents();
         atualizarBaseDados();
         
-        /*
-        if(Conexao.getConexao() != null){
-            PessoaDAO pessoaDAO = new PessoaDAO();
-            listaPessoa = pessoaDAO.listar();
-        }*/
-            //System.out.println("Conectou!");
-        
+        jMenu1.remove(jMenuItem2); // Remove opção de endereço sem implementação no original.
+        jMenuBar1.remove(jMenu2); // Sair continua disponível em Arquivo > Sair.
+        setTitle("Cadastro de pessoas, produtos e vendas");
+        setContentPane(jDesktopPane1);
+
     }
 
     /**
@@ -239,45 +237,27 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.listaPessoa = listaPessoa;
     }
     
-    public void adicionarPessoaLista(Pessoa pessoa){
-        //adicionar na lista
-        //this.listaPessoa.add(pessoa);
-        if(Conexao.getConexao() != null){
-            PessoaDAO pessoaDAO = new PessoaDAO();            
-            pessoaDAO.inserir(pessoa);
-        }
-        atualizarBaseDados();
+    public boolean adicionarPessoaLista(Pessoa pessoa) {
+        boolean ok = new PessoaDAO().inserir(pessoa);
+        if (ok) atualizarBaseDados();
+        return ok;
     }
-
-    public void atualizarPessoaLista(Pessoa pessoa, int posicao) {
-        //atualizar o objeto na posição X dentro do array
-        //this.listaPessoa.set(posicao, pessoa);
-        if(Conexao.getConexao() != null){
-            PessoaDAO pessoaDAO = new PessoaDAO();
-            //a tela cria um objeto novo (id = 0), então pego o id da pessoa que está na posição
-            pessoa.setId(getListaPessoa().get(posicao).getId());
-            pessoaDAO.atualizar(pessoa);
-        }
-        atualizarBaseDados();
+    public boolean atualizarPessoaLista(Pessoa pessoa, int posicao) {
+        pessoa.setId(getListaPessoa().get(posicao).getId());
+        boolean ok = new PessoaDAO().atualizar(pessoa);
+        if (ok) atualizarBaseDados();
+        return ok;
     }
-
-    public void removerPessoaLista(int posicao) {
-        //remover o objeto na posição X dentro do array
-        //this.listaPessoa.remove(posicao);
-        if(Conexao.getConexao() != null){
-            PessoaDAO pessoaDAO = new PessoaDAO();
-            Pessoa pessoa = getListaPessoa().get(posicao);
-            pessoaDAO.excluir(pessoa);
-        }
-        atualizarBaseDados();
+    public boolean removerPessoaLista(int posicao) {
+        boolean ok = new PessoaDAO().excluir(getListaPessoa().get(posicao));
+        if (ok) atualizarBaseDados();
+        return ok;
     }
-    
-    public void atualizarBaseDados(){
-        listaPessoa = new ArrayList<>(); //zero a lista e atualizo no banco de dados
-        if(Conexao.getConexao() != null){
-            PessoaDAO pessoaDAO = new PessoaDAO();            
-            listaPessoa = pessoaDAO.listar();
+    public void atualizarBaseDados() { listaPessoa = new PessoaDAO().listar(); }
+    private void abrir(javax.swing.JInternalFrame tela) {
+        jDesktopPane1.add(tela); tela.setVisible(true);
+        try { tela.setSelected(true); } catch (java.beans.PropertyVetoException ex) {
+            JOptionPane.showMessageDialog(this, "Não foi possível selecionar a janela.");
         }
     }
-    
 }

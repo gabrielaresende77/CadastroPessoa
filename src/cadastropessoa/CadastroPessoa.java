@@ -1,27 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package cadastropessoa;
+import javax.swing.*;
 
-import javax.swing.JOptionPane;
-
-/**
- *
- * @author Professor
- */
 public class CadastroPessoa {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        //JOptionPane.showMessageDialog(null, "Oi!");
-        Conexao.criarBaseDados(); //antes da tela, que já busca as pessoas no banco
-        TelaPrincipal telaPrincipal = new TelaPrincipal();
-        telaPrincipal.setSize(600,600);
-        telaPrincipal.setVisible(true);
+        SwingUtilities.invokeLater(() -> {
+            try (java.sql.Connection con = Conexao.getConexao()) {
+                TelaPrincipal tela = new TelaPrincipal();
+                tela.setSize(1000, 720); tela.setLocationRelativeTo(null); tela.setVisible(true);
+            } catch (java.sql.SQLException ex) {
+                JOptionPane.showMessageDialog(null,
+                    "Não foi possível abrir o banco. Execute banco_dados.sql no MySQL "
+                    + "e confira db.properties.\n" + ex.getMessage(), "Conexão", JOptionPane.ERROR_MESSAGE);
+            }
+        });
     }
-    
 }
