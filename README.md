@@ -7,10 +7,10 @@ Prazo informado no enunciado: **30/11/2026**. Entrega: link deste repositório p
 
 **Antes da entrega, cada pessoa deve substituir sua identificação abaixo pelo nome completo e registrar o que realmente implementou, revisou e testou.** A divisão abaixo é uma proposta. O histórico deve refletir a participação real, com a conta de cada integrante.
 
-| Integrante | Nome completo (preencher) | Responsabilidade proposta |
+| Integrante | Nome completo | Responsabilidade proposta |
 |---|---|---|
 | 1 | Gabriela Oliveira Resende | SQL, modelos, ProdutoDAO, integração e correções da base |
-| 2 | PREENCHER NOME COMPLETO 2 | Tela de produtos, checklist e documentação de execução |
+| 2 | Camila Bianca Alves Gonzaga | Tela de produtos, checklist e documentação de execução |
 | 3 | PREENCHER NOME COMPLETO 3 | VendaDAO, transação e testes de banco |
 | 4 | PREENCHER NOME COMPLETO 4 | Tela de vendas, carrinho, total e testes de regras |
 
