@@ -5,14 +5,13 @@ Prazo informado no enunciado: **30/11/2026**. Entrega: link deste repositório p
 
 ## Integrantes e participação
 
-**Antes da entrega, cada pessoa deve substituir sua identificação abaixo pelo nome completo e registrar o que realmente implementou, revisou e testou.** A divisão abaixo é uma proposta. O histórico deve refletir a participação real, com a conta de cada integrante.
 
 | Integrante | Nome completo | Responsabilidade proposta |
 |---|---|---|
 | 1 | Gabriela Oliveira Resende | SQL, modelos, ProdutoDAO, integração e correções da base |
 | 2 | Camila Bianca Alves Gonzaga | Tela de produtos, checklist e documentação de execução |
 | 3 | Ana Lívia Sousa Moreira | VendaDAO, transação e testes de banco |
-| 4 | PREENCHER NOME COMPLETO 4 | Tela de vendas, carrinho, total e testes de regras |
+| 4 | Mariana Modesto Esper | Tela de vendas, carrinho, total e testes de regras |
 
 ## O que o sistema faz
 
