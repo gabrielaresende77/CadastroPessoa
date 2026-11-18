@@ -1,12 +1,9 @@
 # CadastroPessoa — Produtos e Vendas
 
-Trabalho de Programação I, Sistemas de Informação, UEMG — Unidade Passos, 2026/02.
-Prazo informado no enunciado: **30/11/2026**. Entrega: link deste repositório por um integrante.
-
 ## Integrantes e participação
 
 
-| Integrante | Nome completo | Responsabilidade proposta |
+| Integrante | Nome completo | Responsabilidade |
 |---|---|---|
 | 1 | Gabriela Oliveira Resende | SQL, modelos, ProdutoDAO, integração e correções da base |
 | 2 | Camila Bianca Alves Gonzaga | Tela de produtos, checklist e documentação de execução |
@@ -48,13 +45,3 @@ O driver JDBC recebido no projeto original foi mantido em `src/lib/mysql-connect
 - MySQL real, execução no NetBeans e interação visual: **pendentes de execução pelo grupo**. Não se declara aprovação desses testes sem executá-los.
 
 Execute `testar_regras.cmd` no Windows. Para testar persistência, prepare uma **base separada de testes**, conforme `docs/TESTES.md`, e execute `testar_banco.cmd --base-de-testes`. O teste de banco cria registros identificados como TESTE e remove os próprios registros ao terminar; não utilize uma base com dados importantes.
-
-Veja [checklist de exigências](docs/CHECKLIST.md), [roteiro de testes](docs/TESTES.md) e [guia do GitHub](docs/GUIA_GITHUB.md).
-
-## Referências
-
-- Enunciado fornecido: Trabalho prático em grupo, Programação I — 2026/02, Eduardo Henrique Marques Ferreira.
-- [GitHub: clonar repositório](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
-- [GitHub: convidar colaboradores](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/repository-access-and-collaboration/inviting-collaborators-to-a-personal-repository).
-- [MySQL: CHECK constraints](https://dev.mysql.com/doc/refman/8.0/en/create-table-check-constraints.html).
-- [MySQL: InnoDB](https://dev.mysql.com/doc/refman/8.4/en/innodb-introduction.html).
